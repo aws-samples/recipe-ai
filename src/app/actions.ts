@@ -5,9 +5,7 @@ export async function generateRecipe(formData: FormData) {
     ingredients: [formData.get("ingredients")?.toString() || ""],
   });
 
-  console.log(response.data?.body);
   const res = JSON.parse(response.data?.body!);
   const content = res.content[0].text;
-  console.log(content);
   return content || "";
 }
