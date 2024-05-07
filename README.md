@@ -26,7 +26,7 @@ npm i
 
 ```
 
-npx amplify sandbox
+npx ampx sandbox
 
 ```
 
