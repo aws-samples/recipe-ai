@@ -30,9 +30,7 @@ export function request(ctx) {
                         
                         Remember, your goal is to help users translate their subconscious insights into positive, practical actions in their daily lives. Always strive to provide a balance of insight, action, and reflection in your responses.`;
   
-  const prompt = `Suggest a recipe idea using these ingredients : ${ingredients.join(
-    ","
-  )}.`;
+  const prompt = `Interpret this dream and provide actionable advice: ${ingredients.join(", ")}.`;
 
   return {
     resourcePath: `/model/anthropic.claude-3-sonnet-20240229-v1:0/invoke`,
@@ -51,12 +49,7 @@ export function request(ctx) {
           },
           {
             role: "user",
-            content: [
-              {
-                type: "text",
-                text: `\n\nHuman:${prompt}\n\nAssistant:`,
-              },
-            ],
+            content: prompt
           },
         ],
       },
